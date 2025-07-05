@@ -1,0 +1,189 @@
+ 
+ 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Imani and Kris Project</title>
+    <link rel="stylesheet" href="code.css">
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-image: linear-gradient(to bottom, #6a0dad, #ff004f, #2196f3, #ff69b4);
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .headline {
+            background-color: #f7f2ff; /* light lavender to complement purple-pink background */
+            padding: 30px 10px;
+            margin-bottom: 20px;
+        }
+
+        .social-buttons {
+            margin-top: 15px;
+        }
+
+        .social-buttons a {
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 10px 15px;
+            background-color: #fff;
+            color: #333;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-buttons a:hover {
+            background-color: #ddd;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px;
+        }
+
+        .column {
+            flex: 1 1 300px;
+            max-width: 30%;
+            position: relative;
+        }
+
+        .column img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .column:hover img {
+            transform: scale(1.05);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            transition: opacity 0.3s ease;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .column:hover .overlay {
+            opacity: 1;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        #demo {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .column {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="headline">
+            <h1>Are you feeling bored?</h1>
+            <p>Life is something we must truly enjoy.</p>
+            <p>Want to know more?</p>
+            <p>Explore fun ways to lift your mood:</p>
+
+            <div class="social-buttons">
+                <a href="https://www.tiktok.com" target="_blank" class="btn tiktok">TikTok</a>
+                <a href="https://www.instagram.com" target="_blank" class="btn instagram">Instagram</a>
+                <a href="https://www.snapchat.com" target="_blank" class="btn snapchat">Snapchat</a>
+                <a href="https://www.spotify.com" target="_blank" class="btn spotify">Spotify</a>
+            </div>
+
+            <p>Not what you're looking for? Don't worry, we got you!</p>
+            <button onclick="showMessage()">Yes, tell me more</button>
+            <div id="demo" class="hidden">
+                <p>Other than being on social media, there are many other ways to entertain yourself. You can:</p>
+                <ul style="text-align: left; display: inline-block;">
+                    <li>Read a book</li>
+                    <li>Watch some anime</li>
+                    <li>Watch a nice series/movie</li>
+                </ul>
+                <p>You can enjoy all these things from our website:</p>
+            </div>
+        </header>
+
+        <section id="funLinks" class="row hidden">
+            <div class="column">
+                <a href="https://www.goodreads.com/list/tag/best" target="_blank" title="Explore top books">
+                    <img src="https://thumbs.dreamstime.com/b/cosmic-library-floating-books-representing-infinite-knowledge-wisdom-imaginative-set-stars-cosmos-343128614.jpg" 
+                         alt="A cosmic-themed library showcasing the joy of reading.">
+                    <div class="overlay">Discover Great Books</div>
+                </a>
+            </div>
+            <div class="column">
+                <a href="https://www.google.com/search?q=best+anime" target="_blank" title="Search best anime recommendations">
+                    <img src="https://wallpapers.com/images/hd/anime-collage-3840-x-2160-wallpaper-1kjoyqh3pgaihad9.jpg" 
+                         alt="A colorful collage of top anime characters.">
+                    <div class="overlay">Find Amazing Anime</div>
+                </a>
+            </div>
+            <div class="column">
+                <a href="https://www.netflix.com/tudum/top10/most-popular/tv" target="_blank" title="Explore trending Netflix series">
+                    <img src="https://dnm.nflximg.net/api/v6/BvVbc2Wxr2w6QuoANoSpJKEIWjQ/AAAAQTEInaUK9YubCo4mnoHLP6Ed2pe8gs0ItyrHu_-9p6slkf9flqQT41gjpsoPmAHfHRKRjeOv_kCjWteKkyYk7OeDz3F583ZyDsnlxVvn59iz_m7NNbBJ7c8CRxHrXWTG0AkDCEfVtbIQ7cpMuSVTDJvgSPQ.jpg?r=8e7" 
+                         alt="Poster of a popular Netflix show.">
+                    <div class="overlay">Stream Top TV Shows</div>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function showMessage() {
+            document.getElementById("demo").classList.remove("hidden");
+            document.getElementById("funLinks").classList.remove("hidden");
+        }
+    </script>
+
+</body>
+</html> 
+
+
